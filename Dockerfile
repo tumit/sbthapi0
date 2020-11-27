@@ -10,7 +10,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew build 2>/dev/null || return 0
 
 COPY . .
-RUN ./gradlew test build
+RUN ./gradlew test build --profile
 
 ################################################################################
 # deployment
