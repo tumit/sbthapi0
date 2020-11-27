@@ -3,13 +3,12 @@ pipeline {
     environment {
         APP_NAME = 'sbthapi0'
         APP_VERSION = '1.0.0'
-        GIT_APP_URL = 'git@github.com:tumit/sbthapi0.git'
     }
     stages {
         stage('Pull code') {
             steps {
                 cleanWs()
-                git branch: "main", credentialsId: 'git-ci-user', url: "$GIT_APP_URL"
+                git branch: "main", credentialsId: 'git-ci-user', url: "$GIT_URL"
             }
         }
         stage('Build') {
