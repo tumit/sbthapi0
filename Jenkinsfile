@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Pull code') {
             steps {
-                cleanWs()
                 git branch: "main", credentialsId: 'git-ci-user', url: "$GIT_URL"
             }
         }
